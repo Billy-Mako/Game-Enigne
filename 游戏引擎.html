@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>游戏引擎</title>
+    <link rel="stylesheet" href="css/fullpage.min.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/fullpage.min.js"></script>
+    <!-- 全屏滚动函数 -->
+    <script>
+        $(function() {
+            $('#dowebok').fullpage();
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+        
+        li {
+            list-style: none;
+        }
+        /*-------------------------------------游戏概述模块---------------------------------------*/
+        
+        .bgi {
+            width: 100%;
+            height: 100%;
+            background: url(images/bg.png) no-repeat;
+            background-size: 100%;
+            overflow: hidden;
+        }
+        
+        .bgi .title {
+            margin: 100px auto;
+            width: 600px;
+            height: 150px;
+        }
+        
+        .bgi .title h2 {
+            font-style: italic;
+            font-weight: 500;
+            color: white;
+            text-shadow: 5px 5px 6px rgba(0, 0, 0, .3);
+        }
+        
+        .bgi .title h3 {
+            color: whitesmoke;
+            font-weight: 400;
+        }
+        /* ---------------------------------- */
+        
+        .bgi .self {
+            margin: 100px auto;
+            width: 800px;
+            height: 50px;
+        }
+        
+        .bgi .self h2 {
+            color: white;
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 500;
+            text-align: center;
+            text-shadow: 8px 9px 8px rgba(0, 0, 0, .3);
+        }
+        /*---------------------------------------关于游戏模块----------------------------------------*/
+        
+        .game {
+            width: 100%;
+            height: 800px;
+            background-color: rgb(50, 50, 50);
+            padding-top: 50px;
+            overflow: hidden;
+        }
+        
+        .game h1 {
+            font-size: 48px;
+            font-weight: 400;
+            text-align: center;
+            color: white;
+        }
+        
+        .game .choice {
+            position: relative;
+            margin: 0 auto;
+            margin-top: 30px;
+            width: 800px;
+            height: 100px;
+        }
+        
+        .choice .classify {
+            float: left;
+            width: 160px;
+            height: 40px;
+            color: #4cc9f0;
+            border: 1px solid;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            padding: 10px 20px;
+            cursor: none;
+            transition: all .3s;
+        }
+        
+        .choice .classify:hover {
+            color: white;
+            border: 0;
+            background-color: #4cc9f0;
+            box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+        }
+        
+        .choice .classify_info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: -50px;
+            width: 260px;
+            border: 1px solid #4cc9f0;
+        }
+        
+        .choice .classify_info ul li {
+            margin-left: 5px;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        /*--------------------------------------------*/
+        
+        .choice .constitute {
+            float: left;
+            margin-left: 160px;
+            width: 160px;
+            height: 40px;
+            color: #4cc9f0;
+            border: 1px solid;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            padding: 10px 20px;
+            cursor: none;
+            transition: all .3s;
+        }
+        
+        .choice .constitute:hover {
+            color: white;
+            border: 0;
+            background-color: #4cc9f0;
+            box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+        }
+        
+        .choice .constitute_info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 270px;
+            width: 260px;
+            border: 1px solid #4cc9f0;
+        }
+        
+        .choice .constitute_info ul li {
+            margin-left: 5px;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        /*---------------------------------------------*/
+        
+        .choice .engine {
+            float: left;
+            margin-left: 160px;
+            width: 160px;
+            height: 40px;
+            color: #4cc9f0;
+            border: 1px solid;
+            background-color: transparent;
+            font-size: 16px;
+            font-weight: 300;
+            text-align: center;
+            padding: 10px 20px;
+            cursor: none;
+            transition: all .3s;
+        }
+        
+        .choice .engine:hover {
+            color: white;
+            border: 0;
+            background-color: #4cc9f0;
+            box-shadow: 10px 10px 99px 6px rgba(76, 201, 240, 1);
+        }
+        
+        .choice .engine_info {
+            display: none;
+            position: absolute;
+            top: 60px;
+            left: 580px;
+            width: 395px;
+            border: 1px solid #4cc9f0;
+        }
+        
+        .choice .engine_info ul li {
+            margin-left: 5px;
+            color: white;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .game .demo video {
+            display: none;
+            width: 800px;
+            height: 600px;
+            margin: 0 auto;
+        }
+        /*--------------------------------------Unity模块--------------------------------------*/
+        
+        .unity {
+            margin: 0 auto;
+            padding-top: 50px;
+            display: flex;
+            width: 100%;
+            height: 800px;
+            background-color: white;
+            justify-content: space-around;
+        }
+        
+        .unity .logo {
+            margin-left: 100px;
+            flex: 2;
+        }
+        
+        .unity .logo img {
+            display: block;
+            margin-top: 120px;
+            width: 400px;
+        }
+        
+        .unity .info {
+            width: 700px;
+            height: 500px;
+            flex: 3;
+            padding-right: 25px;
+        }
+        
+        .unity .info h1 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+        
+        .unity .info h3 {
+            margin-top: 15px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+        
+        .unity .info h4 {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .unity .info h5 {
+            margin-top: 20px;
+            font-size: 16px;
+            font-weight: 300;
+        }
+        
+        .unity .info h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: 300;
+            color: deepskyblue;
+        }
+        
+        .unity .info .demo h3 {
+            margin-top: 40px;
+            font-size: 24px;
+            color: deepskyblue;
+            font-weight: 300;
+        }
+        
+        .unity .info .demo ul li {
+            float: left;
+            margin-top: 50px;
+            margin-left: 10px;
+            width: 180px;
+            transition: all .5s;
+        }
+        
+        .unity .info .demo ul li:nth-child(1) {
+            float: left;
+            margin-top: 65px;
+            margin-left: 10px;
+            width: 180px;
+            transition: all .5s;
+        }
+        
+        .unity .info .demo ul li:nth-child(4) {
+            float: left;
+            margin-top: 75px;
+            width: 180px;
+            transition: all .5s;
+        }
+        
+        .unity .info .demo ul li img {
+            width: 180px;
+        }
+        
+        .unity .info .demo ul li:hover {
+            transform: scale(1.3);
+            cursor: none;
+        }
+        /* -------------------------------------虚幻引擎模块---------------------------------- */
+        
+        .unreal {
+            margin: 0 auto;
+            padding-top: 50px;
+            display: flex;
+            width: 100%;
+            height: 800px;
+            background-color: white;
+            justify-content: space-around;
+        }
+        
+        .unreal .logo {
+            margin-left: 100px;
+            flex: 2;
+        }
+        
+        .unreal .logo img {
+            display: block;
+            margin-top: 120px;
+            width: 400px;
+        }
+        
+        .unreal .info {
+            width: 700px;
+            height: 500px;
+            flex: 3;
+            padding-right: 25px;
+        }
+        
+        .unreal .info h1 {
+            font-size: 36px;
+            font-weight: 300;
+        }
+        
+        .unreal .info h3 {
+            margin-top: 15px;
+            font-size: 24px;
+            font-weight: 400;
+        }
+        
+        .unreal .info h4 {
+            margin-top: 15px;
+            font-size: 18px;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .unreal .info h2 {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: 300;
+            color: deepskyblue;
+        }
+        
+        .unreal .info .vision_img {
+            margin-top: 15px;
+            width: 600px;
+            height: 300px;
+        }
+        
+        .unreal .info .vision_img ul li {
+            float: left;
+            display: block;
+            width: 300px;
+            height: 150px;
+            padding-right: 20px;
+        }
+        
+        .unreal .info .vision_img ul li img {
+            width: 100%;
+            transition: all .3s;
+        }
+        
+        .unreal .info .vision_img ul li img:hover {
+            transform: scale(1.3);
+            cursor: none;
+        }
+        /*--------------------------虚幻引擎优秀作品模块----------------------*/
+        
+        .udemo {
+            width: 1200px;
+            height: 800px;
+            margin: 0 auto;
+        }
+        
+        .udemo h1 {
+            font-size: 36px;
+            font-weight: 300;
+            color: black;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .udemo .demo_img {
+            width: 1000px;
+            height: 690px;
+            margin: 0 auto;
+        }
+        
+        .udemo .demo_img ul li {
+            float: left;
+            display: block;
+            width: 300px;
+            height: 200px;
+            margin-right: 25px;
+            margin-top: 25px;
+        }
+        
+        .udemo .demo_img ul li img {
+            width: 100%;
+            transition: all .3s;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, .3);
+        }
+        
+        .udemo .demo_img ul li img:hover {
+            transform: scale(1.3);
+            box-shadow: 5px 5px 6px rgba(0, 0, 0, .5);
+            cursor: none;
+        }
+        /* -------------------------------------引擎对比模块---------------------------------- */
+        
+        .pk img {
+            width: 100%;
+        }
+        
+        .pk_info {
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-around;
+            width: 1300px;
+            height: 100%;
+        }
+        
+        .pk_info .unity_info {
+            width: 600px;
+            height: 100%;
+            border: 1px solid deeppink;
+            border-radius: 5px;
+            flex: 1;
+            margin-right: 50px;
+            padding: 10px 10px;
+        }
+        
+        .pk_info .unity_info h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin: 20px 0;
+        }
+        
+        .pk_info .unity_info h3 {
+            font-size: 22px;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        
+        .pk_info .unity_info h4 {
+            font-size: 20px;
+            font-weight: 300;
+            font-style: italic;
+            margin-top: 10px;
+            color: deepskyblue;
+        }
+        
+        .pk_info .unity_info img {
+            display: block;
+            width: 450px;
+            margin: 0 auto;
+        }
+        /* ------------------------------ */
+        
+        .pk_info .unreal_info {
+            width: 600px;
+            height: 100%;
+            border: 1px solid deepskyblue;
+            border-radius: 5px;
+            flex: 1;
+            margin-right: 50px;
+            padding: 10px 10px;
+        }
+        
+        .pk_info .unreal_info h1 {
+            font-size: 28px;
+            font-weight: 300;
+            margin: 20px 0;
+        }
+        
+        .pk_info .unreal_info h3 {
+            font-size: 22px;
+            font-weight: 300;
+            margin-top: 20px;
+        }
+        
+        .pk_info .unreal_info h4 {
+            font-size: 20px;
+            font-weight: 300;
+            font-style: italic;
+            margin-top: 10px;
+            color: deepskyblue;
+        }
+        
+        .pk_info .unreal_info img {
+            display: block;
+            width: 450px;
+            margin: 0 auto;
+        }
+        /* -------------------------------------总结模块---------------------------------- */
+        
+        .in_one {
+            width: 900px;
+            height: 100%;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+        
+        .in_one h1 {
+            text-align: center;
+            font-size: 50px;
+            font-weight: 300;
+            font-style: italic;
+        }
+        
+        .in_one h3 {
+            font-size: 24px;
+            font-weight: 300;
+            color: rgb(0, 162, 255);
+            margin-top: 15px;
+        }
+        /* ------------------------------------鸣谢模块------------------------------------ */
+        
+        .thanks {
+            width: 100%;
+            height: 800px;
+            background-color: rgb(50, 50, 50);
+            padding-top: 300px;
+        }
+        
+        .thanks .thanks_about {
+            text-align: center;
+            font-size: 130px;
+            font-weight: 300;
+            font-style: italic;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dowebok">
+        <div class="section section1">
+            <!-- 游戏概述模块 -->
+            <div class="bgi">
+                <div class="title">
+                    <h3>德国诗人和剧作家席勒认为 :</h3>
+                    <h2>“人类在生活中要受到 [精神与物质] 的双重束缚，在这些束缚中就失去了 [理想和自由]。于是人们利用剩余的精神创造一个 [自由的世界]，它就是游戏。这种创造活动，产生于人类的本能”。</h2>
+                </div>
+                <div class="self">
+                    <h2>在我看来,游戏就是在快乐中学会某种本领的 [活动]。</h2>
+                </div>
+            </div>
+        </div>
+        <div class="section section2">
+            <!-- 关于游戏模块 -->
+            <div class="game">
+                <h1>关于游戏</h1>
+                <div class="choice">
+                    <div class="classify">游戏分类</div>
+                    <div class="classify_info">
+                        <ul>
+                            <li>RPG-角色扮演游戏</li>
+                            <li>ACT-动作游戏</li>
+                            <li>FPS-第一人称射击游戏</li>
+                            <li>FTG-格斗游戏</li>
+                            <li>SLG-策略游戏</li>
+                            <li>MOBA-多人在线战术竞技游戏</li>
+                            <li>MUG-音乐游戏</li>
+                            <li>ACG-动漫游戏</li>
+                        </ul>
+                    </div>
+                    <div class="constitute">游戏特效组成</div>
+                    <div class="constitute_info">
+                        <ul>
+                            <li>建模</li>
+                            <li>骨骼动画</li>
+                            <li>模型动画</li>
+                            <li>光影</li>
+                            <li>粒子特效</li>
+                            <li>物理系统</li>
+                            <li>碰撞检测</li>
+                            <li>渲染引擎</li>
+                        </ul>
+                    </div>
+                    <div class="engine">游戏引擎</div>
+                    <div class="engine_info">
+                        <ul>
+                            <li>●虚幻引擎 (Unreal Engine)</li>
+                            <li> &nbsp; 代表作:《彩虹六号》系列,《绝地求生》</li>
+                            <li>●Unity引擎 (Unity3D)</li>
+                            <li> &nbsp; 代表作:《王者荣耀》,《逃离塔科夫》,《原神》</li>
+                            <li>●寒霜引擎 (Frostbite Engine)</li>
+                            <li> &nbsp; 代表作:《极品飞车》系列,《战地》系列</li>
+                            <li>●雷霆引擎 (RAGE Engine)</li>
+                            <li> &nbsp; 代表作:《GTA5》,《荒野大镖客》</li>
+                            <li>●起源引擎 (Source Engine)</li>
+                            <li> &nbsp; 代表作:《求生之路》系列,《反恐精英》系列</li>
+                            <li>●铼制引擎 (RE Engine)</li>
+                            <li> &nbsp; 代表作:《生化危机》系列,《鬼泣》系列</li>
+                            <li>●尖叫引擎 (Cry Engine)</li>
+                            <li> &nbsp; 代表作:《孤岛危机》系列</li>
+                            <li>●自研引擎 (公司独自研发)</li>
+                            <li> &nbsp; 比如:《英雄联盟》,《守望先锋》</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="demo">
+                    <video src="video/10秒好哥哥.mp4" controls id="video"></video>
+                </div>
+            </div>
+        </div>
+        <div class="section section3">
+            <!-- Unity3D模块 -->
+            <div class="unity">
+                <div class="logo">
+                    <img src="images/Unity.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h1>Unity3D</h1>
+                    <h3>编程语言: C#, Javascript</h3>
+                    <h4>由Unity Technologies开发的一个让玩家轻松创建诸如三维视频游戏、建筑可视化、实时三维动画等类型互动内容的多平台的综合型游戏开发工具，是一个全面整合的专业游戏引擎。</h4>
+                    <h5>补充一句，这个引擎国内游戏公司很喜欢用（因为是免费的）</h5>
+                    <h2>游戏领域应用 <br>Unity的客户包括包括动视，暴雪，EA，Ubisoft等国外大厂，也包括腾讯，网易等国内厂商，全球超过1900万的中小企业以及个人开发者。全平台（包括Steam/PC/主机/手机）所有游戏中有 [一半] 都是基于Unity创作的.
+                    </h2>
+                    <div class="demo">
+                        <h3>-优秀作品[手游]-</h3>
+                        <ul>
+                            <li>
+                                <img src="images/arknight.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/honkai.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/lushi.png" alt="">
+                            </li>
+                            <li>
+                                <img src="images/wzry.png" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section4">
+            <!-- Unreal模块 -->
+            <div class="unreal">
+                <div class="logo">
+                    <img src="images/Unreal.jpg" alt="">
+                </div>
+                <div class="info">
+                    <h1>Unreal(虚幻引擎)</h1>
+                    <h3>引擎分支: </br>Unreal3(虚幻3), Unreal4(虚幻4), Unreal5(虚幻5-即将优化完成),</h3>
+                    <h3>编程语言: C++、JS、C#</h3>
+                    <h3>编程特色: [可视化蓝图编程]</h3>
+                    <h4>由Epic Games公司推出的一款游戏开发引擎，相比其他引擎，虚幻引擎不仅高效、全能，还能直接预览开发效果，赋予了开发商更强的开发能力。</h4>
+                    <h2>在 可视化的编辑窗口中 游戏开发人员可以直接对游戏中角色,NPC,物品道具,AI的路点及光源进行自由的摆放和属性的控制。并且全部是实时渲染的,而且这种实时渲染还有动态的光影效果。
+                    </h2>
+                    <h2> 在编辑器中还为开发人员提供了一个 “游戏测试” 的按钮,点击后就可以对编辑好的游戏内容进行测试。这样的话,可以一边在 “测试窗口” 中观看游戏画面,一边在另一个窗口中进行实时的调整和修改,十分方便。</h2>
+                    <div class="vision_img">
+                        <ul>
+                            <li>
+                                <img src="images/牛头人2.jpg" alt="">
+                            </li>
+                            <li>
+                                <img src="images/牛头人1.jpg" alt="">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section5">
+            <!-- Unreal优秀作品模块 -->
+            <div class="udemo">
+                <h1>-虚幻引擎优秀作品[游戏][影视]-</h1>
+                <div class="demo_img">
+                    <ul>
+                        <li>
+                            <img src="images/绝地求生.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/古墓丽影.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/堡垒之夜.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/刺激战场.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/最终幻想.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/纸人.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/黑客帝国.jpeg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/哥斯拉.jpg" alt="">
+                        </li>
+                        <li>
+                            <img src="images/X战警.jpg" alt="">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="section section6">
+            <!-- 引擎对比图片 -->
+            <div class="pk">
+                <img src="images/PK.jpg" alt="">
+            </div>
+        </div>
+        <div class="section section7">
+            <!-- 引擎对比信息 -->
+            <div class="pk_info">
+                <div class="unity_info">
+                    <h1>Unity3D</h1>
+                    <h3>做手游的话几乎百分之90都在用Unity，Unity开发快，通用性广，门槛低。因为Unity的难点重点几乎都在前期.</h3>
+                    <h4>Unity使用的是C#</h4>
+                    <h3>以国内目前的市场来看，采用Unity来开发手机游戏似乎是很理想的选择，不论是3D或是2D类型的游戏，Unity提供的功能已经能帮助开发者快速的制作出一款精美的手游. 适合小团队制作，甚至是独立制作,Unity第五代增强了光影渲染，使得整体效果有了进步，已经开始逼近虚幻的步伐.</h3>
+                    <h1>Unity是最初给你感觉非常友善，但越做你会感觉坑越多.</h1>
+                    <img src="images/Unity.jpg" alt="">
+                </div>
+                <div class="unreal_info">
+                    <h1>Unreal</h1>
+                    <h3>做主机游戏或者大型游戏一般用虚幻4等引擎，虚幻4优化难，接口深，适合大团队制作</h3>
+                    <h4>UE4使用C++ 和蓝图混合开发</h4>
+                    <h3>凭借其更棒的画质和更新更酷的VR技术赢得了许多人的支持，该引擎至今已聚集了不下200万名开发者用户. 用虚幻4引擎呈现的游戏和电影级CG，不论是光影渲染、贴图建模材质的深度展现、基于现实的物理碰撞等细节都受到玩家的一致好评. 可以说，对于游戏的成功，虚幻4引擎功不可没。</h3>
+                    <h1>虚幻4是在你接触之时就会让你知道坑有哪些，往不往下跳你自己选择</h1>
+                    <img src="images/Unreal.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+        <div class="section section8">
+            <div class="in_one">
+                <h1>一 ·总结· 一</h1>
+                <div class="say">
+                    <h3>
+                        游戏作为我们的"第九艺术"，将会陪伴我们走过很长一段路，游戏已向人们显示了其强大的艺术生命力。电子游戏艺术作为美的表现，同时又作为审美的对象，使无数人为之倾倒。
+                    </h3>
+                    <h3>
+                        这种艺术是融合了音乐，美术，电影，制片，电脑软硬件技术等各种美学元素的一种复合型艺术。精彩的故事情节，美妙的游戏画面，动听的游戏音乐，可爱的角色造型，每一样都散发着第九艺术的独特魅力。</h3>
+                    <h3>
+                        它总是以其独特的表现形式丰富着人们的内心世界，任何外在的强制力量都不能使人们放弃对它的热爱和陶醉。人们通过欣赏（游玩）优秀的电子游戏作品，不但能更深刻地认识了自我，也能更全面地认识了人生。
+                    </h3>
+                    <h3>
+                        随着制作技术的日渐成熟，游戏作品的品质也会逐步的提高，更多优秀作品也会涌现出来，到那个时候，也许"第九艺术"就会真的成为 [艺术] 了。
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <div class="section section9">
+            <div class="thanks">
+                <h1 class="thanks_about">一·感谢倾听·一</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        // [关于游戏]部分
+        var classify = document.querySelector('.classify');
+        var classify_info = document.querySelector('.classify_info');
+        classify.addEventListener('mouseenter', function() {
+            classify_info.style.display = 'block';
+        });
+        classify.addEventListener('mouseleave', function() {
+            classify_info.style.display = 'none';
+        });
+        // [游戏特效]部分
+        var constitute = document.querySelector('.constitute');
+        var constitute_info = document.querySelector('.constitute_info');
+        var demo = document.getElementById('video');
+        constitute.addEventListener('mouseenter', function() {
+            constitute_info.style.display = 'block';
+        });
+        constitute.addEventListener('mouseleave', function() {
+            constitute_info.style.display = 'none';
+        });
+        constitute.addEventListener('click', function() {
+            demo.style.display = 'block';
+        });
+        // [游戏引擎]部分
+        var engine = document.querySelector('.engine');
+        var engine_info = document.querySelector('.engine_info');
+        var demo = document.getElementById('video');
+        engine.addEventListener('mouseenter', function() {
+            engine_info.style.display = 'block';
+        });
+        engine.addEventListener('mouseleave', function() {
+            engine_info.style.display = 'none';
+        });
+        engine.addEventListener('click', function() {
+            demo.style.display = 'none';
+        });
+    </script>
+</body>
+
+</html>
